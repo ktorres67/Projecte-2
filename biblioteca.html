@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        main,
+        nav,
+        .searchBar,
+        .topArtists,
+        .recommendedArtists {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: white;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .searchBar {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #1DB954;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .searchBar input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .searchBar button {
+            padding: 10px;
+        }
+
+        .topArtists,
+        .recommendedArtists {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #1DB954;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .topArtists ul,
+        .recommendedArtists ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topArtists li,
+        .recommendedArtists li {
+            display: inline-block;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        .recommendedGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .playlistItem {
+            text-align: center;
+        }
+
+        .playlistItem img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .profileBubble {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profileBubble img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        .createPlaylist button {
+            padding: 10px;
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+.createPlaylist form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createPlaylist label {
+    margin-bottom: 10px;
+}
+
+.createPlaylist input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.createPlaylist button {
+    padding: 10px;
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilos específicos para la burbuja de perfil en la nueva página */
+
+.profileBubble {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.profileBubble img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+    </style>
+    <title>Otra Página</title>
+</head>
+
+<body>
+    
+
+
+    <!-- Barra de menú en la parte superior -->
+    <header>
+        <div class="menu">
+            <h1>AK*KA</h1>
+            <div class="profileBubble">
+                <img src="profile-picture.jpg" alt="Foto de perfil">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Biblioteca en la nueva página -->
+     <!-- Sección Biblioteca en la nueva página -->
+     <section class="library">
+        <h3>Mi Biblioteca</h3>
+        <!-- Lista de playlists del usuario -->
+        <ul>
+            <li>Playlist Personal 1</li>
+            <li>Playlist Personal 2</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+
+    <!-- Sección Crear Playlist -->
+    <section class="createPlaylist">
+        <h2>Crear Nueva Playlist</h2>
+        <!-- Formulario para crear una nueva playlist -->
+        <form>
+            <label for="playlistName">Nombre de la Playlist:</label>
+            <input type="text" id="playlistName" name="playlistName" required>
+            <button type="submit">Crear Playlist</button>
+        </form>
+    </section>
+
+    <!-- Burbuja de perfil en la nueva página -->
+    <div class="profileBubble">
+        <img src="profile-picture.jpg" alt="Foto de perfil">
+    </div>
+
+    <!-- Menú de navegación inferior en la nueva página -->
+    <nav>
+        <ul>
+            <li><a href="inici.html">Home</a></li>
+            <li><a href="lupa.html">Buscar <img src="search-icon.png" alt="Lupa"></a></li>
+            <li><a href="biblioteca.html">Biblioteca</a></li>
+            <li><a href="premium.html">Premium</a></li>
+        </ul>
+    </nav>
+    <script>
+        // Simulación de datos de playlists
+        const playlists = ["Playlist Personal 1", "Playlist Personal 2"];
+    
+        // Función para mostrar las playlists en la página
+        function showPlaylists() {
+            const playlistList = document.getElementById("playlistList");
+            playlistList.innerHTML = ""; // Limpiar la lista antes de mostrar
+    
+            playlists.forEach((playlist, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `${playlist} <button class="deletePlaylist" data-index="${index}">Eliminar</button>`;
+                playlistList.appendChild(listItem);
+            });
+    
+            // Añadir eventos para los botones de eliminar
+            const deleteButtons = document.querySelectorAll(".deletePlaylist");
+            deleteButtons.forEach(button => {
+                button.addEventListener("click", deletePlaylist);
+            });
+        }
+    
+        // Función para eliminar una playlist
+        function deletePlaylist(event) {
+            const index = event.target.dataset.index;
+            playlists.splice(index, 1); // Eliminar la playlist del arreglo
+            showPlaylists(); // Volver a mostrar la lista actualizada
+        }
+    
+        // Mostrar las playlists al cargar la página
+        showPlaylists();
+    
+        // Agregar evento al formulario para crear una nueva playlist
+        document.getElementById("createPlaylistForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evitar el envío del formulario
+    
+            const playlistName = document.getElementById("playlistName").value;
+            playlists.push(playlistName); // Agregar la nueva playlist al arreglo
+            showPlaylists(); // Volver a mostrar la lista actualizada
+        });
+    </script>
+
+</body>
+
+</html>

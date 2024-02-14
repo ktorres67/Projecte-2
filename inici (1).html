@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        main,
+        nav {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: white;
+        }
+
+        #topPlaylists {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            /* Cambios para estructurar en dos columnas */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        #topPlaylists li {
+            font-size: 18px;
+        }
+
+        main {
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 20px;
+            /* Añade espacio arriba */
+            margin-bottom: 20px;
+            /* Añade espacio abajo */
+        }
+
+
+        h2 {
+            color: white;
+        }
+
+        .recommendedGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .playlistItem {
+            text-align: center;
+        }
+
+        .playlistItem img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .profileBubble {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .profileBubble img {
+            width: 50px;
+            border-radius: 50%;
+        }
+    </style>
+    <title>Spotify-like Web</title>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $('#recommendedPlaylists').hide();
+
+            $('h2').click(function () {
+                $('#recommendedPlaylists').toggle();
+            });
+        });
+    </script>
+
+    <!-- Encabezado: Playlists más escuchadas -->
+    <header>
+        <h1>AK*KA</h1>
+        <div class="profileBubble">
+            <img src="profile-picture.jpg" alt="Foto de perfil">
+        </div>
+        <h2>Playlists más escuchadas</h2>
+        <!-- Lista de playlists estructurada en dos columnas -->
+        <ul id="topPlaylists">
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 6</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </header>
+
+    <!-- Contenido principal: Playlists recomendadas -->
+    <main>
+        <h3>Playlists recomendadas</h3>
+        <!-- Grid de playlists recomendadas -->
+        <div class="recommendedGrid" id="recommendedPlaylists">
+            <!-- Cada div representa una playlist recomendada -->
+            <div class="playlistItem">
+                <img src="playlist1.jpg" alt="Playlist 1">
+                <h3>Playlist 1</h3>
+            </div>
+            <div class="playlistItem">
+                <img src="playlist2.jpg" alt="Playlist 2">
+                <h3>Playlist 2</h3>
+            </div>
+            <!-- Agrega más elementos según sea necesario -->
+        </div>
+    </main>
+
+    <!-- Menú de navegación inferior -->
+     <nav class="amazing-tabs">
+        <div class="main-tabs-container">
+          <div class="main-tabs-wrapper">
+            <ul class="main-tabs">
+              <li>
+                <button class="round-button" data-translate-value="0" data-color="red">
+                  <span class="avatar">
+                    <img src="https://sd2.org/app/uploads/2021/04/pexels-pixabay-270348-1120x1032.jpg" alt="user avatar" />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button class="round-button gallery active" style="--round-button-active-color: #2962ff" data-translate-value="100%" data-color="blue">
+                  <svg fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button" style="--round-button-active-color: #00c853" data-translate-value="200%" data-color="green">
+                  <svg fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button" style="--round-button-active-color: #aa00ff" data-translate-value="300%" data-color="purple">
+                  <svg fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="round-button" style="--round-button-active-color: #ff6d00" data-translate-value="400%" data-color="orange">
+                  <svg fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <div class="main-slider" aria-hidden="true">
+              <div class="main-slider-circle"> </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <script src="scripts.js" crossorigin=""></script>
+</body>
+
+</html>

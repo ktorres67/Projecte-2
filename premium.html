@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Añadir estilos específicos para los cuadros de planes */
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        main,
+        nav,
+        .searchBar,
+        .topArtists,
+        .recommendedArtists,
+        .library,
+        .profileBubble,
+        .premium,
+        .planActual,
+        .planBox {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: white;
+        }
+
+        .searchBar {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #4CAF50;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .searchBar input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .searchBar button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #45a049;
+            color: white;
+        }
+
+        .premium {
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .planBox {
+            width: 150px;
+            height: 150px;
+            background-color: #f4f4f4;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .planBox:hover {
+            background-color: #ddd;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .profileBubble {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .profileBubble img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .planSpace {
+            width: 20px;
+            display: inline-block;
+        }
+    </style>
+    <title>Premium y Plan Actual</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <h1>AK*KA</h1>
+            <div class="profileBubble">
+                <img src="profile-picture.jpg" alt="Foto de perfil">
+            </div>
+        </div>
+    </header>
+    <!-- Sección Premium -->
+    <section class="premium">
+        <h2>Premium</h2>
+        <!-- Cuadro para el plan gratuito -->
+        <div class="planBox" id="freePlan">
+            <h3>Plan Gratuito</h3>
+            <p>¡Disfruta de música sin anuncios!</p>
+        </div>
+        <!-- Espacio entre los cuadros de planes -->
+        <div class="planSpace"></div>
+        <!-- Cuadro para el plan de estudiantes -->
+        <div class="planBox" id="studentPlan">
+            <h3>Plan de Estudiantes</h3>
+            <p>Oferta especial para estudiantes.</p>
+        </div>
+    </section>
+
+    <!-- Sección Plan Actual -->
+    <section class="planActual">
+        <h2>Plan Actual</h2>
+        <!-- Contenido de la sección Plan Actual -->
+    </section>
+
+
+    <!-- Menú de navegación inferior en la nueva página -->
+    <nav>
+        <ul>
+            <li><a href="inici.html">Home</a></li>
+            <li><a href="lupa.html">Buscar <img src="search-icon.png" alt="Lupa"></a></li>
+            <li><a href="biblioteca.html">Biblioteca</a></li>
+            <li><a href="premium.html">Premium</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
